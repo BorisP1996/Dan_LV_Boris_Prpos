@@ -7,6 +7,91 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <CheckBox Content="Salama"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Margin="82,32,0,0"
+                  Width="91"
+                  x:Name="chkSalama"
+                  IsChecked="{Binding Pizza.SalamaB,UpdateSourceTrigger=PropertyChanged}"/>
+        <CheckBox Content="Sunka"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Margin="82,59,0,0"
+                  Width="91" />
+        <CheckBox Content="Kulen"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Margin="82,87,0,0"
+                  Width="91" />
+        <CheckBox Content="Kecap"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Margin="82,117,0,0"
+                  Width="91" />
+        <CheckBox Content="Majonez"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Margin="82,148,0,0"
+                  Width="91" />
+        <CheckBox Content="Ljuta paprika"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Margin="82,181,0,0"
+                  Width="91" />
+        <CheckBox Content="Masline"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Margin="82,210,0,0"
+                  Width="91" />
+        <CheckBox Content="Origano"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Margin="82,241,0,0"
+                  Width="91" />
+        <CheckBox Content="Susam"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Margin="82,270,0,0"
+                  Width="91" />
+        <CheckBox Content="Sir"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Margin="82,302,0,0"
+                  Width="91" />
+        <CheckBox Content="Small pizza"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Margin="575,32,0,0"
+                  Width="91" />
+        <CheckBox Content="Medium pizza"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Margin="575,75,0,0"
+                  Width="100" />
+        <CheckBox Content="Big pizza"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Margin="575,117,0,0"
+                  Width="100" />
+        <Button Content="Calculate amount"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="100"
+                Margin="591,287,0,0"
+                Command="{Binding CalculateAmount,UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Content="Order"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="100"
+                Margin="591,356,0,0" 
+                Command="{Binding Order,UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Content="{Binding LabelMessage,UpdateSourceTrigger=PropertyChanged}"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="501,312,0,0"
+               Width="261"
+               Height="25" 
+               x:Name="LabelPanel"/>
     </Grid>
 </Window>
