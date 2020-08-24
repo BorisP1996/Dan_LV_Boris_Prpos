@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using Zadatak_1.Model;
 
@@ -156,7 +157,47 @@ namespace Zadatak_1.ViewModel
             {
                 suma += newPiza.biggPiza;
             }
-            LabelMessage = "Total price: " + suma.ToString();
+            LabelMessage = "Ukupna cijena: " + suma.ToString() +" RSD";
+        }
+
+        private ICommand order;
+        public ICommand Order
+        {
+            get
+            {
+                if (order==null)
+                {
+                    order = new RelayCommand(param => OrderExecute(), param => CanOrderExecute());
+                }
+                return order;
+            }
+        }
+
+        private void OrderExecute()
+        {
+            try
+            {
+               // MessageBox.Show("Pica je porucena!");
+                LabelMessage = "";
+                
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private bool CanOrderExecute()
+        {
+            if (CanCalculateAmountExecute()==true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
