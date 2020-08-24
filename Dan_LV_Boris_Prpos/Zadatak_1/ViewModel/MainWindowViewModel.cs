@@ -63,7 +63,26 @@ namespace Zadatak_1.ViewModel
 
         private bool CanCalculateAmountExecute()
         {
-            return true;
+            if (Pizza.SmallP==true && Pizza.MediumP==true)
+            {
+                return false;
+            }
+            if (Pizza.SmallP == true && Pizza.BigP == true)
+            {
+                return false;
+            }
+            if (Pizza.MediumP == true && Pizza.BigP == true)
+            {
+                return false;
+            }
+            if (Pizza.MediumP==false && Pizza.SmallP==false && Pizza.BigP==false)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         private void CalculateAmountExecute()
