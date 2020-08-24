@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using Zadatak_1.ViewModel;
 
 namespace Zadatak_1
@@ -27,6 +14,11 @@ namespace Zadatak_1
             this.DataContext = new MainWindowViewModel(this);
         }
 
+        /// <summary>
+        /// Button calculate amount=>displays total price and disables every checkbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             chkSalama.IsEnabled = false;
@@ -45,6 +37,7 @@ namespace Zadatak_1
             chkBig.IsEnabled = false;
         }
 
+        //button order=>enables button back again and clears label message
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             //enable them 
@@ -80,10 +73,12 @@ namespace Zadatak_1
             chkBig.IsChecked = false;
 
             MessageBox.Show("Pica je porucena!");
+            //executing command from view model that is binded to the button in xaml
             Naruci.Command.Execute(Naruci.CommandParameter);
             
         }
 
+        //Button ODUSTANI =>cancels everything, enables all check boxes
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             //enable them 

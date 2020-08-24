@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using Zadatak_1.Model;
@@ -19,6 +15,7 @@ namespace Zadatak_1.ViewModel
             Pizza = new Pizza();
         }
 
+        #region Properties
         private Pizza pizza;
 
         public Pizza Pizza
@@ -28,7 +25,6 @@ namespace Zadatak_1.ViewModel
                 OnPropertyChanged("Pizza");
             }
         }
-
 
         private int totalPrice;
 
@@ -47,8 +43,9 @@ namespace Zadatak_1.ViewModel
                 OnPropertyChanged("LabelMessage");
             }
         }
+        #endregion
 
-
+        //Command that will calculate price for every selected component=>also pay atention to what it does in code behind
         private ICommand calculateAmount;
         public ICommand CalculateAmount
         {
@@ -62,104 +59,129 @@ namespace Zadatak_1.ViewModel
             }
         }
 
+        /// <summary>
+        /// Only (and minimum) one pizza type can be selected
+        /// </summary>
+        /// <returns></returns>
         private bool CanCalculateAmountExecute()
         {
-            if (Pizza.SmallP==true && Pizza.MediumP==true)
+            try
             {
-                return false;
+                if (Pizza.SmallP == true && Pizza.MediumP == true)
+                {
+                    return false;
+                }
+                if (Pizza.SmallP == true && Pizza.BigP == true)
+                {
+                    return false;
+                }
+                if (Pizza.MediumP == true && Pizza.BigP == true)
+                {
+                    return false;
+                }
+                if (Pizza.MediumP == false && Pizza.SmallP == false && Pizza.BigP == false)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
-            if (Pizza.SmallP == true && Pizza.BigP == true)
+            catch (Exception ex)
             {
+
+                MessageBox.Show(ex.ToString());
                 return false;
-            }
-            if (Pizza.MediumP == true && Pizza.BigP == true)
-            {
-                return false;
-            }
-            if (Pizza.MediumP==false && Pizza.SmallP==false && Pizza.BigP==false)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
             }
         }
 
+        //if checkbox is chehcked=>add price to total sum and display it in label
         private void CalculateAmountExecute()
         {
-            int suma = 0;
-            Pizza newPiza = new Pizza();
-            newPiza.SalamaB = Pizza.SalamaB;
-            newPiza.KulenB = Pizza.KulenB;
-            newPiza.SunkaB = Pizza.SunkaB;
-            newPiza.SirB = Pizza.SirB;
-            newPiza.KecapB = Pizza.KecapB;
-            newPiza.MajonezB = Pizza.MajonezB;
-            newPiza.SusamB = Pizza.SusamB;
-            newPiza.PaprikaB = Pizza.PaprikaB;
-            newPiza.MaslineB = Pizza.MaslineB;
-            newPiza.OriganoB = Pizza.OriganoB;
+            try
+            {
+                int suma = 0;
+                Pizza newPiza = new Pizza();
+                newPiza.SalamaB = Pizza.SalamaB;
+                newPiza.KulenB = Pizza.KulenB;
+                newPiza.SunkaB = Pizza.SunkaB;
+                newPiza.SirB = Pizza.SirB;
+                newPiza.KecapB = Pizza.KecapB;
+                newPiza.MajonezB = Pizza.MajonezB;
+                newPiza.SusamB = Pizza.SusamB;
+                newPiza.PaprikaB = Pizza.PaprikaB;
+                newPiza.MaslineB = Pizza.MaslineB;
+                newPiza.OriganoB = Pizza.OriganoB;
 
-            newPiza.SmallP = Pizza.SmallP;
-            newPiza.MediumP = Pizza.MediumP;
-            newPiza.BigP = Pizza.BigP;
+                newPiza.SmallP = Pizza.SmallP;
+                newPiza.MediumP = Pizza.MediumP;
+                newPiza.BigP = Pizza.BigP;
 
-            if (newPiza.SalamaB==true)
-            {
-                suma += newPiza.salama;
+                if (newPiza.SalamaB == true)
+                {
+                    suma += newPiza.salama;
+                }
+                if (newPiza.KulenB == true)
+                {
+                    suma += newPiza.kulen;
+                }
+                if (newPiza.SunkaB == true)
+                {
+                    suma += newPiza.sunka;
+                }
+                if (newPiza.SirB == true)
+                {
+                    suma += newPiza.sir;
+                }
+                if (newPiza.KecapB == true)
+                {
+                    suma += newPiza.kecap;
+                }
+                if (newPiza.MajonezB == true)
+                {
+                    suma += newPiza.majonez;
+                }
+                if (newPiza.SusamB == true)
+                {
+                    suma += newPiza.susam;
+                }
+                if (newPiza.PaprikaB == true)
+                {
+                    suma += newPiza.paprika;
+                }
+                if (newPiza.MaslineB == true)
+                {
+                    suma += newPiza.masline;
+                }
+                if (newPiza.OriganoB == true)
+                {
+                    suma += newPiza.origano;
+                }
+                if (newPiza.SmallP == true)
+                {
+                    suma += newPiza.smallPiza;
+                }
+                if (newPiza.MediumP == true)
+                {
+                    suma += newPiza.mediumPiza;
+                }
+                if (newPiza.BigP == true)
+                {
+                    suma += newPiza.biggPiza;
+                }
+                LabelMessage = "Ukupna cijena: " + suma.ToString() + " RSD";
             }
-            if (newPiza.KulenB==true)
+            catch (Exception ex)
             {
-                suma += newPiza.kulen;
+
+                MessageBox.Show(ex.ToString());
             }
-            if (newPiza.SunkaB==true)
-            {
-                suma += newPiza.sunka;
-            }
-            if (newPiza.SirB==true)
-            {
-                suma += newPiza.sir;
-            }
-            if (newPiza.KecapB==true)
-            {
-                suma += newPiza.kecap;
-            }
-            if (newPiza.MajonezB==true)
-            {
-                suma += newPiza.majonez;
-            }
-            if (newPiza.SusamB == true)
-            {
-                suma += newPiza.susam;
-            }
-            if (newPiza.PaprikaB == true)
-            {
-                suma += newPiza.paprika;
-            }
-            if (newPiza.MaslineB == true)
-            {
-                suma += newPiza.masline;
-            }
-            if (newPiza.OriganoB == true)
-            {
-                suma += newPiza.origano;
-            }
-            if (newPiza.SmallP==true)
-            {
-                suma += newPiza.smallPiza;
-            }
-            if (newPiza.MediumP == true)
-            {
-                suma += newPiza.mediumPiza;
-            }
-            if (newPiza.BigP == true)
-            {
-                suma += newPiza.biggPiza;
-            }
-            LabelMessage = "Ukupna cijena: " + suma.ToString() +" RSD";
         }
 
+        /// <summary>
+        /// Pay atention to what it does in code behind, also it clears label
+        /// </summary>
         private ICommand order;
         public ICommand Order
         {
@@ -177,9 +199,7 @@ namespace Zadatak_1.ViewModel
         {
             try
             {
-               // MessageBox.Show("Pica je porucena!");
-                LabelMessage = "";
-                
+                LabelMessage = "";               
             }
             catch (Exception ex)
             {

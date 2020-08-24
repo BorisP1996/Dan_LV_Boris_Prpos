@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Zadatak_1.Model
+﻿namespace Zadatak_1.Model
 {
+    /// <summary>
+    /// This class represents model in MVVM pattern
+    /// It contains prices for every pizza component and bool properties that will be connected to check boxes
+    /// </summary>
     class Pizza
     {
         public int smallPiza = 200;
