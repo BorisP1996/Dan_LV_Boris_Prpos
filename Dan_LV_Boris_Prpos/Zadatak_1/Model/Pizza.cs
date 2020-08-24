@@ -22,19 +22,6 @@ namespace Zadatak_1.Model
         public int susam = 14;
         public int sir = 84;
 
-        public bool smallPizab;
-        public bool mediumPizab;
-        public bool biggPizab;
-        public bool kulenb;
-        public bool kecapb;
-        public bool sunkab;
-        public bool majonezb;
-        public bool paprikab;
-        public bool maslineb;
-        public bool origanob;
-        public bool susamb;
-        public bool sirb;
-
         private bool salamab;
 
         public bool SalamaB
@@ -42,6 +29,114 @@ namespace Zadatak_1.Model
             get { return salamab; }
             set { salamab = value; }
         }
+
+        private bool kulenb;
+
+        public bool KulenB
+        {
+            get { return kulenb; }
+            set { kulenb = value; }
+        }
+
+        private bool kecapb;
+
+        public bool KecapB
+        {
+            get { return kecapb; }
+            set { kecapb = value; }
+        }
+
+        private bool sunkab;
+
+        public bool SunkaB
+        {
+            get { return sunkab; }
+            set { sunkab = value; }
+        }
+
+        private bool majonezb;
+
+        public bool MajonezB
+        {
+            get { return majonezb; }
+            set { majonezb = value; }
+        }
+
+        private bool paprikab;
+
+        public bool PaprikaB
+        {
+            get { return paprikab; }
+            set { paprikab = value; }
+        }
+
+        private bool maslineb;
+
+        public bool MaslineB
+        {
+            get { return maslineb; }
+            set { maslineb = value; }
+        }
+
+        private bool origanob;
+
+        public bool OriganoB
+        {
+            get { return origanob; }
+            set { origanob = value; }
+        }
+
+        private bool susamb;
+
+        public bool SusamB
+        {
+            get { return susamb; }
+            set { susamb = value; }
+        }
+
+        private bool sirb;
+
+        public bool SirB
+        {
+            get { return sirb; }
+            set { sirb = value; }
+        }
+
+        private bool smallP;
+
+        public bool SmallP
+        {
+            get { return smallP; }
+            set { smallP = value; }
+        }
+
+        private bool mediumP;
+
+        public bool MediumP
+        {
+            get { return mediumP; }
+            set { mediumP = value; }
+        }
+
+        private bool  bigP;
+
+        public bool  BigP
+        {
+            get { return bigP; }
+            set { bigP = value; }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }

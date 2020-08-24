@@ -18,62 +18,74 @@
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
                   Margin="82,59,0,0"
-                  Width="91" />
+                  Width="91"
+                  IsChecked="{Binding Pizza.SunkaB,UpdateSourceTrigger=PropertyChanged}"/>
         <CheckBox Content="Kulen"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
                   Margin="82,87,0,0"
-                  Width="91" />
+                  Width="91"
+                  IsChecked="{Binding Pizza.KulenB,UpdateSourceTrigger=PropertyChanged}"/>
         <CheckBox Content="Kecap"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
                   Margin="82,117,0,0"
-                  Width="91" />
+                  Width="91" 
+                  IsChecked="{Binding Pizza.KecapB,UpdateSourceTrigger=PropertyChanged}"/>
         <CheckBox Content="Majonez"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
                   Margin="82,148,0,0"
-                  Width="91" />
+                  Width="91"
+                  IsChecked="{Binding Pizza.MajonezB,UpdateSourceTrigger=PropertyChanged}"/>
         <CheckBox Content="Ljuta paprika"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
                   Margin="82,181,0,0"
-                  Width="91" />
+                  Width="91" 
+                  IsChecked="{Binding Pizza.PaprikaB,UpdateSourceTrigger=PropertyChanged}"/>
         <CheckBox Content="Masline"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
                   Margin="82,210,0,0"
-                  Width="91" />
+                  Width="91" 
+                  IsChecked="{Binding Pizza.MaslineB,UpdateSourceTrigger=PropertyChanged}"/>
         <CheckBox Content="Origano"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
                   Margin="82,241,0,0"
-                  Width="91" />
+                  Width="91" 
+                  IsChecked="{Binding Pizza.OriganoB,UpdateSourceTrigger=PropertyChanged}"/>
         <CheckBox Content="Susam"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
                   Margin="82,270,0,0"
-                  Width="91" />
+                  Width="91" 
+                  IsChecked="{Binding Pizza.SusamB,UpdateSourceTrigger=PropertyChanged}"/>
         <CheckBox Content="Sir"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
                   Margin="82,302,0,0"
-                  Width="91" />
+                  Width="91" 
+                  IsChecked="{Binding Pizza.SirB,UpdateSourceTrigger=PropertyChanged}"/>
         <CheckBox Content="Small pizza"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
                   Margin="575,32,0,0"
-                  Width="91" />
+                  Width="91" 
+                  IsChecked="{Binding Pizza.SmallP,UpdateSourceTrigger=PropertyChanged}"/>
         <CheckBox Content="Medium pizza"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
                   Margin="575,75,0,0"
-                  Width="100" />
+                  Width="100" 
+                  IsChecked="{Binding Pizza.MediumP,UpdateSourceTrigger=PropertyChanged}"/>
         <CheckBox Content="Big pizza"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
                   Margin="575,117,0,0"
-                  Width="100" />
+                  Width="100" 
+                  IsChecked="{Binding Pizza.BigP,UpdateSourceTrigger=PropertyChanged}"/>
         <Button Content="Calculate amount"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"

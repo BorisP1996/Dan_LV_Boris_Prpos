@@ -68,12 +68,76 @@ namespace Zadatak_1.ViewModel
 
         private void CalculateAmountExecute()
         {
+            int suma = 0;
             Pizza newPiza = new Pizza();
             newPiza.SalamaB = Pizza.SalamaB;
+            newPiza.KulenB = Pizza.KulenB;
+            newPiza.SunkaB = Pizza.SunkaB;
+            newPiza.SirB = Pizza.SirB;
+            newPiza.KecapB = Pizza.KecapB;
+            newPiza.MajonezB = Pizza.MajonezB;
+            newPiza.SusamB = Pizza.SusamB;
+            newPiza.PaprikaB = Pizza.PaprikaB;
+            newPiza.MaslineB = Pizza.MaslineB;
+            newPiza.OriganoB = Pizza.OriganoB;
+
+            newPiza.SmallP = Pizza.SmallP;
+            newPiza.MediumP = Pizza.MediumP;
+            newPiza.BigP = Pizza.BigP;
+
             if (newPiza.SalamaB==true)
             {
-                LabelMessage = newPiza.salama.ToString();
+                suma += newPiza.salama;
             }
+            if (newPiza.KulenB==true)
+            {
+                suma += newPiza.kulen;
+            }
+            if (newPiza.SunkaB==true)
+            {
+                suma += newPiza.sunka;
+            }
+            if (newPiza.SirB==true)
+            {
+                suma += newPiza.sir;
+            }
+            if (newPiza.KecapB==true)
+            {
+                suma += newPiza.kecap;
+            }
+            if (newPiza.MajonezB==true)
+            {
+                suma += newPiza.majonez;
+            }
+            if (newPiza.SusamB == true)
+            {
+                suma += newPiza.susam;
+            }
+            if (newPiza.PaprikaB == true)
+            {
+                suma += newPiza.paprika;
+            }
+            if (newPiza.MaslineB == true)
+            {
+                suma += newPiza.masline;
+            }
+            if (newPiza.OriganoB == true)
+            {
+                suma += newPiza.origano;
+            }
+            if (newPiza.SmallP==true)
+            {
+                suma += newPiza.smallPiza;
+            }
+            if (newPiza.MediumP == true)
+            {
+                suma += newPiza.mediumPiza;
+            }
+            if (newPiza.BigP == true)
+            {
+                suma += newPiza.biggPiza;
+            }
+            LabelMessage = "Total price: " + suma.ToString();
         }
     }
 }
